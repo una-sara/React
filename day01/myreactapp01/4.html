@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="box">请稍候...</div>
+
+  <script src="js/react.development.js"></script>
+  <script src="js/react-dom.development.js"></script>
+  <script src="js/babel.min.js"></script>
+  <script type="text/babel">
+    //目标：向#box中添加一个
+    //<p class="danger">hello world</p>
+    //使用JSX语法
+
+    //创建元素
+    let el = 
+    <div>
+      <hr/>
+      <p id="p2" className="danger">hello <br/> world</p>
+    </div>
+
+    //在#box元素中渲染刚刚创建的对象 
+    ReactDOM.render(el, box)
+  </script>
+</body>
+</html>

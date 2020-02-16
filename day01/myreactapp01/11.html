@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="js/react.development.js"></script>
+  <script src="js/react-dom.development.js"></script>
+  <script src="js/babel.min.js"></script>
+  <script type="text/babel">
+  //自定义组件
+  //①function式组件
+  function MyC01(){
+    return (
+      <div className="c01">组件01</div>
+    )
+  }
+
+  //②class式组件
+  class MyC02 extends React.Component{
+    //private uname = 'dingding'  //React使用ES，没有private
+    uname = 'dangdang'
+    age = 20
+
+    render(){  //指定如何渲染当前组件
+      return (
+        <div className="c02">组件02-{this.uname}-{this.age}</div>
+      )
+    }
+  }
+
+  //创建元素
+  let el = (
+    <div>
+      <MyC01></MyC01>
+      <hr/>
+      <MyC02></MyC02>
+    </div>
+  ) 
+  //渲染元素
+  ReactDOM.render(el, app)
+
+  </script>
+</body>
+</html>

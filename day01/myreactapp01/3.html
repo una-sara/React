@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="box"></div>
+  <script src="js/react.development.js"></script>
+  <script src="js/react-dom.development.js"></script>
+  <script>
+  /*
+    <div class="login">
+      <label for="uname">用户名</label>
+      <input type="text" id="uname"></input>
+    </div>
+  */
+  let c1 = React.createElement(
+    'label',
+    {htmlFor: 'uname'},
+    '用户名：'
+  )
+  let c2 = React.createElement(
+    'input',
+    {type:'text', id:'uname'}
+  )
+  let parent = React.createElement(
+    'div',
+    {className: 'login'},
+    c1,
+    c2
+  )
+  //把上述元素渲染到DOM树
+  ReactDOM.render( parent, box )
+  </script>
+</body>
+</html>

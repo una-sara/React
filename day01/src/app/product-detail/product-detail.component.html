@@ -1,0 +1,64 @@
+<!-- 商品详情的页头 -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>商品详情</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button routerLink="/cart">
+        <ion-icon slot="icon-only" name="cart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!-- 商品详情的主体 -->
+<ion-content>
+  <!-- 产品型号 -->
+  <ion-item>
+    <ion-label>
+      产品型号：{{product.lname}}
+    </ion-label>
+  </ion-item>
+
+  <!-- 轮播图片 -->
+  <ion-slides pager="true">
+    <ion-slide *ngFor="let pic of product.picList">
+      <img [src]="url.host + pic.md">
+    </ion-slide>
+  </ion-slides>
+
+  <!-- 卡片：产品详情 -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        {{product.title}}
+      </ion-card-title>
+      <ion-card-subtitle>
+        {{product.subtitle}}
+      </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label color="danger">
+          {{product.price | currency:'￥'}}
+        </ion-label>
+        <ion-button color="danger" slot="end">添加到购物车</ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-label>CPU：{{product.cpu}}</ion-label>
+      </ion-item>
+
+      <!-- <div>{{product.details | imgUrl}}</div> -->
+      <!-- <div [innerText]="product.details"></div> -->
+      <div [innerHTML]="product.details | imgUrl"></div>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

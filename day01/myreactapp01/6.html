@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="js/react.development.js"></script>
+  <script src="js/react-dom.development.js"></script>
+  <script src="js/babel.min.js"></script>
+  <script type="text/babel">
+  let uname = 'ding ding'
+  let age = 20
+  function add(){
+    return uname + age
+  }
+
+  //使用JSX表达式
+  let el = 
+  <div>
+    <p title={uname}>{uname}</p>
+    <p title={age}>{age}</p>
+    <hr/>
+    <p>后年的年龄：{age+2}</p>
+    <p>成年了吗？：{age>=18}</p>
+    <p>在工作年龄范围内吗？：{age>=18 && age<60}</p>
+    <p>成年了吗？：{age>=18 ? '是' : '否'}</p>
+    <p>姓名的大写形式：{uname.toUpperCase()}</p>
+    <p>调用全局函数：{add()}</p>
+    <p>调用匿名函数：{ (function(){
+      return 100+200
+    })() }</p>
+    {/* <p>创建对象：{new Date()}</p> */}
+    {/* <p>创建对象：{new Object()}</p> */}
+    <p>创建对象：{new String('abc')}</p>
+    <p>创建对象：{new Object().toString()}</p>
+    <p>创建对象：{new Date().getFullYear()}</p>
+    <p>调用全局对象：{JSON.stringify({})}</p>
+  </div>
+
+  //渲染元素
+  ReactDOM.render(el, app)
+
+  </script>
+</body>
+</html>

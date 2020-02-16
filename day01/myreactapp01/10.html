@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="js/react.development.js"></script>
+  <script src="js/react-dom.development.js"></script>
+  <script src="js/babel.min.js"></script>
+  <script type="text/babel">
+  //列表循环渲染——模拟ngFor的效果
+  /*
+  练习：创建一个数组，保存如下员工信息： 
+	[
+		{eid: 101, ename: 'dingding', salary: 5000, sex: 1},
+		{eid: 102, ename: 'doudou, salary: 6000, sex: 1},
+		{eid: 103, ename: 'yaya', salary: 7000, sex: 0},
+	]
+  把上述数据渲染在一个TABLE中，每个员工信息对应一个TR，内部包含四个TD
+  */
+  let list = [
+		{eid:101, ename:'dingding', salary:5000, sex:1},
+		{eid:102, ename:'doudou', salary:6000, sex:1},
+		{eid:103, ename:'yaya', salary:7000, sex:0},
+  ]
+  /*目标：
+  let list = [
+    <tr><td></td><td></td>...</tr>,
+    <tr><td></td><td></td>...</tr>,
+    <tr><td></td><td></td>...</tr>,
+  ]
+  */
+  //创建元素
+  let el = <table border="1" width="100%">
+    <tbody>
+      {
+        list.map((e, i)=>{
+          return (
+            <tr key={i}>
+              <td>{e.eid}</td>
+              <td>{e.ename}</td>
+              <td>{e.salary}</td>
+              <td>{e.sex}</td>
+            </tr>
+          )
+        })
+      }
+    </tbody>
+  </table>
+
+  //渲染元素
+  ReactDOM.render(el, app)
+
+  </script>
+</body>
+</html>

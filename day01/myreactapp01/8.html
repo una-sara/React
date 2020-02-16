@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="js/react.development.js"></script>
+  <script src="js/react-dom.development.js"></script>
+  <script src="js/babel.min.js"></script>
+  <script type="text/babel">
+  //条件渲染——模拟ngIf的效果
+  /*
+  练习：创建一个变量表示用户当前的积分，若积分大于0，可以显示一个视频播放区(<video>)，否则显示一段警告消息(<p>积分不足无法观看</p>)
+  */
+  //let score = 0
+  let score = 1000
+  //创建元素
+  let el =
+  <div>
+    {
+      (function(){
+        if(score>0)return <video></video>
+        else return <p>积分不足无法观看</p>
+      })()
+    }
+  </div>
+  //渲染元素
+  ReactDOM.render(el, app)
+
+  </script>
+</body>
+</html>

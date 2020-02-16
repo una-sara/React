@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="box">请稍候...</div>
+
+  <script src="js/react.development.js"></script>
+  <script src="js/react-dom.development.js"></script>
+  <script>
+    //目标：向#box中添加一个
+    //<p class="danger">hello world</p>
+
+    //let el = document.createElement('p')
+    //el.className = "danger"
+    //el.innerHTML = "hello world"
+    //box.appendChild(el)
+
+    //创建元素
+    let el = React.createElement(
+      'p',    //参数1：标签名
+      {className: 'danger', id:'p3'},  //参数2：DOM属性
+      'hello world',   //剩余参数：标签内容及子元素
+      'abc',
+      'xzy'
+    )
+    //在#box元素中渲染刚刚创建的对象 
+    ReactDOM.render(el, box)
+  </script>
+</body>
+</html>
