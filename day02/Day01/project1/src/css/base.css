@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    background: #dfd;
+}
+/* base.css中 注释掉图片有关的样式, 因为目前还不支持图片的打包 */
+#pikaboo {
+    width: 200px;
+    height: 200px;
+    background: url("../img/44.jpeg") no-repeat;
+    background-size: 100%;
+}
+
+h1 {
+    height: 100%;
+    background: url("../img/300.jpg");
+}

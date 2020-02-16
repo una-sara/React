@@ -1,0 +1,47 @@
+总结:
+1. ES6 模块
+关键词: export  import
+
+导出:
+单个导出:
+export var m = 111;
+export function xxx(){}
+export class XX{}
+
+引入时: import {xx, xx, xx as cc} from '文件路径'
+
+合并导出, 起别名:
+export { xx, xx, xxx as cc}
+
+引入: import * as xx from '路径'
+xx.?
+
+export default { xx, xx, xxx as cc}
+
+引入: import xx from '路径'
+
+混合引入:
+import xx, {xx, xx} from '路径'
+
+需要导出时 用  export defalut{}  和 export xx 配合
+
+使用时: 必须带有 type="module" 属性
+而且必须走服务器
+
+2. webpack
+作用: 
+1. 可以把 ES6 规范 转为 ES5 规范, 让浏览器可以直接执行
+2. 可以有效减少 网络请求的文件数量: 请求优化的一种方式
+3. 图片打包: 剔除掉没有用到的图片, 减少垃圾数据
+
+配置项中重要的配置:
+
+mode: 打包的方式, 分产品和开发
+entry: 要打包的 js文件路径
+output: 出口, 打包之后的文件存放在哪里, 一般叫 dist
+loader: webpack 本身只能打包 js 文件, 要想打包非js 文件, 则需要加载额外模块才能实现.  loader 就是这些模块
+plugins: 插件, 为webpack 提供更多的自动化的操作, 让开发更加简单快捷.
+
+
+
+提前注册 新浪微博,  因为后面要讲 新浪云
